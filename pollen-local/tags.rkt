@@ -58,7 +58,7 @@
 (define (section . elements)
   (let* ([element-words (string-split (car elements))]
          [first-3-words (string-join (take element-words 3))]
-         [rest-elements `(,(string-join #:before-first " " (drop element-words 3)) . ,(cdr elements))])
+         [rest-elements `(,(string-join #:before-first " " #:after-last " " (drop element-words 3)) . ,(cdr elements))])
     (case (current-poly-target)
      [(tex pdf) (string-append* `("\\newthought{" ,first-3-words "}" ,@rest-elements))]
      [(html) `(section (span [[class "newthought"]] ,first-3-words) ,@rest-elements)]
