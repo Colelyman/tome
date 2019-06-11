@@ -20,8 +20,7 @@
            syntax/modresolve)
   (define-runtime-path pollen-local/tags.rkt "pollen-local/tags.rkt")
   (define cache-watchlist
-    (map resolve-module-path
-         '(pollen-local/tags.rkt))))
+    '(pollen-local/tags.rkt)))
 
 (define default-author "Cole A. Lyman")
 
