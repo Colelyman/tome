@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>◊(select-from-metas 'title here) | Tome</title>
-        <link rel="stylesheet" type="text/css" href="assets/css/tufte.css"/>
+        <link rel="stylesheet" type="text/css" href="/assets/css/tufte.css"/>
         <meta name="viewport" contents="width=device-width, initial-scale=1">
     </head>
 
