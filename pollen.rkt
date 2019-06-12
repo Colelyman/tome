@@ -34,12 +34,12 @@
 (define (prettify-date-html date-string)
   date-string)
 
-(define (published-date metas)
-  (let ([d (iso8601->date (select-from-metas 'published metas))])
+(define (published-date)
+  (let ([d (iso8601->date (select-from-metas 'published (current-metas)))])
     (pretty-date d)))
 
-(define (get-author metas)
-  (let ([author (select-from-metas 'author metas)])
+(define (get-author)
+  (let ([author (select-from-metas 'author (current-metas))])
     (cond
       [author author]
       [else default-author])))

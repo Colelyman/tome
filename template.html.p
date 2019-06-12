@@ -10,11 +10,11 @@
     <body>
         <article>
             <h1 id="◊text->id{◊(select-from-metas 'title here)}">◊(select-from-metas 'title here)</h1>
-            <p class="subtitle">◊(get-author here)</p>
+            <p class="subtitle">◊(get-author)</p>
             ◊(->html doc #:splice? #t)
 
             <section>
-                <p>This page was generated on: ◊(get-current-date) and published on: ◊(published-date here)</p>
+                <p>This page was generated on: ◊(get-current-date) and published on: ◊(published-date)</p>
             </section>
         </article>
     </body>
