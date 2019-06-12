@@ -32,11 +32,13 @@
       [(txt) (apply string-append `(,@link-text "(" ,url ")"))]
       [else `(a [[href ,url]] ,@link-text)])))
 
-(define (code . elements)
+(define (code #:block [block #f] . elements)
   (case (current-poly-target)
     [(tex pdf) (string-append* `("\\texttt{" ,@elements "}"))]
     [(txt) (string-append* `("`" ,@elements "`"))]
-    [else `(pre ,@elements)]))
+    [else (if block
+              `(pre [[class "code"]] ,@elements)
+              `(code ,@elements))]))
 
 (define (xref #:target [target #f] #:prefx [prefix "sec"] text)
   (let ([target (if (not target)
