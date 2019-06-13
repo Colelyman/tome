@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>◊(select-from-metas 'title here) | Tome</title>
         <link rel="stylesheet" type="text/css" href="/assets/css/tufte.css"/>
+        <script type="text/javascript" src="/assets/js/MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
         <meta name="viewport" contents="width=device-width, initial-scale=1">
     </head>
 

@@ -9,14 +9,14 @@
 (define (text->id text)
   (string-downcase (string-replace text " " "-")))
 
-(define (h1  elements)
+(define (h1 elements)
   (let ([id (string-downcase (string-replace elements " " "-"))])
     (case (current-poly-target)
      [(tex pdf) (apply string-append `("\\section{" ,elements "}\\label{sec:" ,id "}"))]
      [(txt) (string-upcase (apply string-append `(,elements "\n")))]
      [else `(h2 [[id ,id]] ,elements)])))
 
-(define (h2  elements)
+(define (h2 elements)
   (let ([id (string-downcase (string-replace elements " " "-"))])
     (case (current-poly-target)
      [(tex pdf) (apply string-append `("\\subsection{" ,elements "}\\label{sec:" ,id "}"))]
@@ -39,6 +39,12 @@
     [else (if block
               `(pre [[class "code"]] ,@elements)
               `(code ,@elements))]))
+
+(define ($ . elements)
+  (case (current-poly-target)
+    [(tex pdf) (string-append* `("$" ,@elements "$"))]
+    [(txt) (string-append* `("`" ,@elements "`"))]
+    [else (string-append* `("\\(" ,@elements "\\)"))]))
 
 (define (xref #:target [target #f] #:prefx [prefix "sec"] text)
   (let ([target (if (not target)
