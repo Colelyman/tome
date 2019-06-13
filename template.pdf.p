@@ -9,9 +9,9 @@
 
     \title{◊(select-from-metas 'title here)}
 
-    \author{◊(get-author here)}
+    \author{◊(get-author)}
 
-    \date{◊(published-date here)}
+    \date{◊(published-date)}
 
     \begin{document}
 
